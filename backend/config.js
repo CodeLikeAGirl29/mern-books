@@ -1,5 +1,4 @@
-const PORT = 5555;
-const mongoDBUrl = 
-"mongodb+srv://fullstack:mongodbPass@data.ditziev.mongodb.net/?retryWrites=true&w=majority&appName=Data"
+const PORT=5555;
+const mongoDBUrl=""
 
 module.exports = {PORT, mongoDBUrl}

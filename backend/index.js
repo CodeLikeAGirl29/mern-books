@@ -1,12 +1,12 @@
 const express = require('express');
-const { PORT, mongoDBUrl } = require('./config');
+const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const Book = require('./model/bookModel');
 const bookRoutes = require('./routes/route.js')
 const cors = require('cors')
+dotenv.config();
 
 const app = express();
-
 
 // middleware
 app.use(express.json());
@@ -19,7 +19,6 @@ app.use(
     })
 );
 
-
 // route
 app.use("/books", bookRoutes);
 
@@ -28,9 +27,9 @@ app.get('/', (req, res) => {
     res.send("Welcome To Bookstore MERN")
 })
 
-mongoose.connect(mongoDBUrl)
+mongoose.connect(process.env.MONGO_URI)
     .then(() => {
-        app.listen(PORT, () => {
+        app.listen(process.env.PORT, () => {
             console.log(`App is listening to port: ${PORT}`)
         });
         console.log("App Connected To Database")
