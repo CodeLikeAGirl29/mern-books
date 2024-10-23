@@ -12,7 +12,7 @@ const ShowBook = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5555/books/${id}`)
+      .get(`http://lighthearted-gingersnap-877009.netlify.app/books/${id}`)
       .then((response) => {
         setBooks(response.data);
         setLoading(false);

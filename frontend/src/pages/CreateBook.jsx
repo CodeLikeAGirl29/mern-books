@@ -18,7 +18,7 @@ const CreateBooks = () => {
     };
     setLoading(true);
     axios
-      .post("http://localhost:5555/books", data)
+      .post("https://lighthearted-gingersnap-877009.netlify.app/books", data)
       .then(() => {
         setLoading(false);
         navigate("/");

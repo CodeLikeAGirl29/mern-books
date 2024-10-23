@@ -15,7 +15,7 @@ const EditBook = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://localhost:5555/books/${id}`)
+      .get(`http://lighthearted-gingersnap-877009.netlify.app/books/${id}`)
       .then((response) => {
         setTitle(response.data.title);
         setAuthor(response.data.author);
@@ -45,7 +45,7 @@ const EditBook = () => {
 
     // Perbarui URL untuk `PUT` request jika mengedit buku, bukan membuat buku baru
     axios
-      .put(`http://localhost:5555/books/${id}`, data) 
+      .put(`http://lighthearted-gingersnap-877009.netlify.app/books/${id}`, data) 
       .then(() => {
         setLoading(false);
         navigate("/");
